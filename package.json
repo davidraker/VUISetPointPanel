@@ -13,9 +13,10 @@
   "author": "Sadab",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@grafana/data": "latest",
-    "@grafana/toolkit": "latest",
-    "@grafana/ui": "latest",
+    "@grafana/data": "^8.0.5",
+    "@grafana/toolkit": "^8.0.5",
+    "@grafana/ui": "^8.0.5",
+    "@grafana/runtime": "^8.0.5",
     "emotion": "10.0.27"
   },
   "engines": {
