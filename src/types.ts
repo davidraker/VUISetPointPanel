@@ -1,4 +1,4 @@
-import { DataQuery } from '@grafana/data';
+import { DataQuery, DataQueryResponse } from '@grafana/data';
 
 type SeriesSize = 'sm' | 'md' | 'lg';
 type CircleColor = 'red' | 'green' | 'blue';
@@ -16,4 +16,7 @@ export interface MyQuery extends DataQuery {
   route?: string;
   http_method?: string;
   data?: object;
+}
+
+export interface QueryResponse extends DataQueryResponse {
 }
