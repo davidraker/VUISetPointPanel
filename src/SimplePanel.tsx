@@ -5,7 +5,7 @@ import {
     DataSourceJsonData,
     DataQueryRequest
 } from '@grafana/data';
-import {SimpleOptions, MyQuery} from 'types';
+import {SimpleOptions, MyQuery, QueryResponse} from 'types';
 import {getDataSourceSrv} from '@grafana/runtime';
 // import { css, cx } from 'emotion';
 // import { stylesFactory, useTheme } from '@grafana/ui';
@@ -44,12 +44,14 @@ export const SimplePanel: React.FC<Props> = ({options, data, width, height}) => 
             } as MyQuery;
             let request = {} as DataQueryRequest;
             request.targets = [q];
-            let resp = await DataSource.query(request);
+            let resp = await DataSource.query(request) as QueryResponse;
             console.log('resp from query is:');
             console.log(resp);
 
-            let setError = JSON.parse(resp['data']['0'].first.buffer['0'])
-            console.log(setError['Campus/Building1/Fake2/SampleWritableFloat1'].set_error)
+            let setError = JSON.parse(resp.data[0].fields[0].values.buffer[0]);
+            console.log('Value of set_error');
+            console.log(setError);
+            console.log(setError[options.URL].set_error)
             if (setError[options.URL].set_error == null){
                 setFetchedData(value);
             } else {
