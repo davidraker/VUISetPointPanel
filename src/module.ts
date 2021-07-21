@@ -11,16 +11,16 @@ export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setPanelOption
             defaultValue: 'VOLTTRON',
         })
         .addTextInput({
-            path: 'VolttronNode',
-            name: 'VOLTTRON Node',
-            description: 'Enter the name of your VOLTTRON Node',
-            defaultValue: 'labtestlion',
+            path: 'platformDevice',
+            name: 'Platform Device',
+            description: 'Enter the Platform Device Path',
+            defaultValue: '/platforms/labtestlion',
         })
         .addTextInput({
             path: 'URL',
             name: 'API Endpoint Input',
             description: 'Enter the API endpoint to send data',
-            defaultValue: 'Campus/Building1/Fake2/SampleWritableFloat1',
+            defaultValue: '/devices/Campus/Building1/Fake2/SampleWritableFloat1',
         })
         // .addBooleanSwitch({
         //     path: 'showSeriesCount',
