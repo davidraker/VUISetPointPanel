@@ -57,7 +57,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
       } as MyQuery;
       let request = {} as DataQueryRequest;
       request.targets = [q];
-      let resp = (await DataSource.query(request)) as Observable<DataQueryResponse>;
+      let resp = (await DataSource.query(request)) as unknown as Observable<DataQueryResponse>;
       console.log('resp from query is:');
       console.log(resp);
 
